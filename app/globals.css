@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Custom variables */
+  --background-end: #f5f5f5;
+  --stone-800: #292524;
+  --stone-700: #44403c;
+  --stone-200: #e7e5e4;
+  --stone-100: #f5f4f3;
+  --gray-600: #525252;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans, Arial, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
+
+  /* Custom theme properties */
+  --color-primary: var(--stone-800);
+  --color-primary-hover: var(--stone-700);
+  --color-secondary: var(--stone-100);
+  --color-muted: var(--gray-600);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff; /* Keeping light theme for now as specified */
+    --foreground: #0a0a0a;
+  }
+}
+
+body {
+  background: linear-gradient(to bottom, var(--background), var(--background-end));
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Base styles */
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Custom component classes */
+.container-custom {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--gray-600);
+  margin-bottom: 3rem;
+  text-align: center;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--stone-800);
+  color: white;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--stone-700);
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--stone-800);
+  color: var(--stone-800);
+  border-radius: 0.375rem;
+  transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--stone-100);
+}
